@@ -1,55 +1,56 @@
-# [Nombre de la Aplicación]
+# Ferrum Gym
 
 ## 👥 Miembros del Equipo
 | Nombre y Apellidos | Correo URJC | Usuario GitHub |
 |:--- |:--- |:--- |
-| [Nombre 1] | [email1]@alumnos.urjc.es | [User1] |
-| [Nombre 2] | [email2]@alumnos.urjc.es | [User2] |
-| [Nombre 3] | [email3]@alumnos.urjc.es | [User3] |
-| [Nombre 4] | [email4]@alumnos.urjc.es | [User4] |
+| Roberto Acebes Morán | r.acebes.2024@alumnos.urjc.es | robertoacebes |
+| Luis Estirado Revuelta | l.estirado.2024@alumnos.urjc.es | koldoest26 |
+| Elena González Rodríguez | e.gonzalezro.2024@alumnos.urjc.es | egonzalezro |
+| Jaime Salgado Carballeda | j.salgado.2024@alumnos.urjc.es | [User4] |
 
 ---
 
 ## 🎭 **Preparación: Definición del Proyecto**
 
 ### **Descripción del Tema**
-[Escribe aquí una descripción breve y concisa de qué trata tu aplicación, el sector al que pertenece y qué valor aporta al usuario].
+Nuestra aplicación web es una plataforma de gestión para un gimnasio que permite a los usuarios consultar horarios, reservar clases colectivas y valorar su experiencia.
+El sector es el de la salud y biniesetar, aportando valor al usuario al organizar su planificación deportiva y permitir al administrador controlar el aforo y las actividades de forma eficiente.
 
 ### **Entidades**
 Indicar las entidades principales que gestionará la aplicación y las relaciones entre ellas:
 
-1. **[Entidad 1]**: [Ej: Usuario]
-2. **[Entidad 2]**: [Ej: Producto]
-3. **[Entidad 3]**: [Ej: Pedido]
-4. **[Entidad 4]**: [Ej: Categoría]
+1. **Usuario**: Entran los clientes, entrenadores y el administrador
+2. **Actividad**: El conjunto de las clases ofertadas (crossfit, yoga, pilates, maquinas)
+3. **Reserva**: La inscripcion de un cliente a una actividad
+4. **Reseña**: Valoracion de un cliente sobre una actividad
 
 **Relaciones entre entidades:**
-- [Ej: Usuario - Pedido: Un usuario puede tener múltiples pedidos (1:N)]
-- [Ej: Pedido - Producto: Un pedido puede contener múltiples productos y un producto puede estar en múltiples pedidos (N:M)]
-- [Ej: Producto - Categoría: Un producto pertenece a una categoría (N:1)]
-- [Descripción de otras relaciones relevantes]
+- Usuario - Reserva: Un usuario puede tener varias resevas de actividades (1:N)
+- Usuario - Reseña: Un usuario puede escribir varias reseñas (1:N)
+- Actividad - Reserva: Una actividad puede ser reservada por multiples usuarios (1:N)
+- Actividad - Reseña: Una actividad puede recibir muchas reseñas por parte de un usuario (1:N) 
 
 ### **Permisos de los Usuarios**
 Describir los permisos de cada tipo de usuario e indicar de qué entidades es dueño:
 
 * **Usuario Anónimo**: 
-  - Permisos: [Ej: Visualización de catálogo, búsqueda de productos, registro]
+  - Permisos: Visualización del catálogo de actividades, consulta de horarios generales, búsqueda de clases y acceso al formulario de registro
   - No es dueño de ninguna entidad
 
 * **Usuario Registrado**: 
-  - Permisos: [Ej: Gestión de perfil, realizar pedidos, crear valoraciones]
-  - Es dueño de: [Ej: Sus propios Pedidos, su Perfil de Usuario, sus Valoraciones]
+  - Permisos: Gestión de su perfil personal, posibilidad de realizar reservas en las actividades disponibles, cancelación de sus propias reservas y redacción de reseñas sobre las actividades realizadas.
+  - Es dueño de: Entidad Usuario (su propio perfil); Entidad Reserva (consulta de las reservas que ha realizado); Entidad Reseña (Las valoraciones que ha escrito (solo él puede editarlas o borrarlas).
 
 * **Administrador**: 
-  - Permisos: [Ej: Gestión completa de productos (CRUD), visualización de estadísticas, moderación de contenido]
-  - Es dueño de: [Ej: Productos, Categorías, puede gestionar todos los Pedidos y Usuarios]
+  - Permisos: Gestión completa de la plataforma. Puede crear, editar y eliminar actividades (CRUD completo). Tiene capacidad para moderar reseñas inadecuadas y visualizar el listado completo de reservas y usuarios.
+  - Es dueño de: Entidad Actividad (encargado de dar de alta y gestionar las clases); Así mismo, tiene permisos sobre todos los objetos para tareas de mantenimiento del sitio.
 
 ### **Imágenes**
 Indicar qué entidades tendrán asociadas una o varias imágenes:
 
-- **[Entidad con imágenes 1]**: [Ej: Usuario - Una imagen de avatar por usuario]
-- **[Entidad con imágenes 2]**: [Ej: Producto - Múltiples imágenes por producto (galería)]
-- **[Entidad con imágenes 3]**: [Ej: Categoría - Una imagen representativa por categoría]
+- **[Entidad con imágenes 1]**: Entidad Usuario: Cada usuario podrá subir una imagen de perfil (avatar) para personalizar su cuenta. 
+- **[Entidad con imágenes 2]**: Entidad Actividad: Cada actividad ofertada tendrá asociada una imagen representativa.
+- **[Entidad con imágenes 3]**: Entidad Reseña: Los usuarios podrán adjuntar una fotografía a su reseña. 
 
 ---
 
